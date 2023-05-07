@@ -28,8 +28,9 @@ app.get("/api/cases", async (req, res) => {
     .filter(oneCase => oneCase !== '')
 
     const unique = [...new Set(filtered)];
-
+    console.log('PRINTING CASES')
     unique.map(oneCase => console.log(oneCase))
+    console.log('DONE PRINTING CASES')
 
     res.json({message: 'success'})
 });
