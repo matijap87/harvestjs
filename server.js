@@ -7,6 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var timeEntries = require('./timeEntries');
+var messenger = require('./messenger');
 
 var HTTP_PORT = 8009
 
@@ -28,6 +29,8 @@ app.get("/api/cases", async (req, res) => {
     .filter(oneCase => oneCase !== '')
 
     const unique = [...new Set(filtered)];
+    messenger.send(unique)
+    
     console.log('PRINTING CASES')
     unique.map(oneCase => console.log(oneCase))
     console.log('DONE PRINTING CASES')
