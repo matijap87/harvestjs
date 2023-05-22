@@ -30,7 +30,7 @@ async function sendGreetingMessage() {
 
   const userId = process.env.NODE_ENV === 'prod' ? process.env.PROD_USER_ID : process.env.DEV_USER_ID
 
-  channel.send({content: `<@${userId}>, kejsovi za mesec ${month}`})
+  channel.send({content: `<@${userId}>, kejsovi za mesec ${month} za <@${process.env.HARVEST_USER_ID}>`})
 }
 
 async function sendToDiscord(messages) {

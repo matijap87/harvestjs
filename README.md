@@ -4,9 +4,10 @@ SETUP AND RUN
 3) npm start
 
 
-create token
+create harvest token and obtain account id
 https://id.getharvest.com/developers
 
+to get discord user id, right click on avatar and click "Copy User ID"
 
 node version: 16.19
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'PINGING HARVEST'
+echo "\nPINGING HARVEST\n"
 
 curl http://localhost:8009/api/cases
 
