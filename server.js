@@ -29,11 +29,12 @@ app.get("/api/cases", async (req, res) => {
     .filter(oneCase => oneCase !== '')
 
     const unique = [...new Set(filtered)];
-    messenger.send(unique)
-    
+
     console.log('PRINTING CASES')
     unique.map(oneCase => console.log(oneCase))
     console.log('DONE PRINTING CASES')
 
-    res.json({message: 'success'})
+    const response = await messenger.send(unique)
+
+    res.json(response)
 });

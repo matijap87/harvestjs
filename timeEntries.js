@@ -1,28 +1,17 @@
 var request = require('./request');
 const dateFns = require('date-fns');
+const dates = require('./dates.js')
 
 async function getTimeEntries() {
   return await request.doRequest({ endpoint: 'time_entries', params: { from: getFrom(), to: getTo() }})
 }
 
 function getFrom() {
-  return dateFns.format(getToday(), getFromDateFormat())
+  return dates.format(dates.getToday(), dates.getFromDateFormat())
 }
 
 function getTo() {
-  return dateFns.format(dateFns.lastDayOfMonth(getToday()), getToDateFormat())
-}
-
-function getToday() {
-  return new Date()
-}
-
-function getFromDateFormat() {
-  return 'yyyy-MM-01'
-}
-
-function getToDateFormat() {
-  return 'yyyy-MM-dd'
+  return dates.format(dates.lastDayOfMonth(dates.getToday()), dates.getToDateFormat())
 }
 
 module.exports = {
