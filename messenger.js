@@ -22,7 +22,7 @@ async function send(messages) {
 async function sendGreetingMessage() {
   const userId = process.env.NODE_ENV === 'prod' ? process.env.PROD_USER_ID : process.env.DEV_USER_ID
 
-  return await discordClient.sendMessageToDiscord({message: `<@${userId}>, kejsovi za mesec ${dates.getCurrentMonthDate()} za <@${process.env.HARVEST_USER_ID}>`})
+  return await discordClient.sendMessageToDiscord({message: `<@${userId}>, kejsovi za mesec ${dates.getCurrentMonthDate()} za <@${process.env.DISCORD_USER_ID}>`})
 }
 
 module.exports = {
