@@ -7,8 +7,6 @@ async function send(messages) {
     return greetingSent
   }
 
-  // const message = 
-
   return await discordClient.sendMessageToDiscord({message: messages.join("\n")})
 }
 
