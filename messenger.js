@@ -7,16 +7,9 @@ async function send(messages) {
     return greetingSent
   }
 
-  var messageSentStatus = {status: true}
-  messages.forEach(async (message) => {
-    const messageSent = await discordClient.sendMessageToDiscord({message})
-    if (!messageSent.status) {
-      messageSentStatus = messageSent
-      return
-    }
-  })
+  // const message = 
 
-  return messageSentStatus
+  return await discordClient.sendMessageToDiscord({message: messages.join("\n")})
 }
 
 async function sendGreetingMessage() {
